@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Formulario de Cadastro</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="assets/img/undraw_add_information_j2wg.svg">
+        </div>
+        <div class="form">
+            <form action="#" id="formcontato" method="POST">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Não encontrou o que procurava?</h1>
+                        <h2>Preencha o formulário e retornaremos o contato.</h2>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="name">Nome</label>
+                        <input id="name" type="text" name="name" placeholder="Digite seu nome" required oninput="nameValidate()">
+                        <span class="span-required">Nome deve possuir pelo menos 3 caracteres</span>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu email" required oninput="emailValidate()">
+                        <span class="span-required">Digite um email valido</span>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="confim-email">Confirmar Email</label>
+                        <input id="confirm-email" type="email" name="confirm-email" placeholder="Confirme seu email" required oninput="emailConfirmValidate()">
+                        <span class="span-required">Os emails devem ser iguais</span>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">Numero para contato</label>
+                        <input id="number" type="tel" name="number" placeholder="(xx) xxxxx-xxxx" required maxlength="13" onkeypress="formatar('##-#####-####', this)" oninput="phoneNumber()">
+                        <span class="span-required">Numero de celular/telefone não valido</span>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="date">Data de Nascimento</label>
+                        <input id="date" type="text" name="date" placeholder="__/__/____" maxlength="10" onkeypress="formatar('##/##/####', this)" required oninput="dateNumber()">
+                        <span class="span-required">Deve ser uma data valida</span>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="bairro">Bairro</label>
+                        <select name="bairros" id="bairro">
+                            <option value="">--Escolha um bairro--</option>
+                            <option value="camaqua">Camaquã</option>
+                            <option value="tristeza">Tristeza</option>
+                            <option value="ipanema">Ipanema</option>
+                            <option value="vila-nova">Vila Nova</option>
+                            <option value="nonoai">Nonoai</option>
+                            <option value="cavalhada">Cavalhada</option>
+                            <option value="menino-deus">Menino Deus</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="radio-turno-inputs">
+                    <div class="radio-turno-title">
+                        <h6>Periodo para contato</h6>
+                    </div>
+
+                    <div class="radio-group">
+                        <div class="radio-input">
+                            <input type="radio" id="manha" name="turno">
+                            <label for="manha">Manhã</label>
+                        </div>
+
+                        <div class="radio-input">
+                            <input type="radio" id="tarde" name="turno">
+                            <label for="tarde">Tarde</label>
+                        </div>
+
+                        <div class="radio-input">
+                            <input type="radio" id="noite" name="turno">
+                            <label for="noite">Noite</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="radio-contato-inputs">
+                    <div class="radio-contato-title">
+                        <h6>Deseja realizar contato por telefone?</h6>
+                    </div>
+
+                    <div class="radio-contato-group">
+                        <div class="radio-contato-input">
+                            <input type="radio" id="concordo" name="contato">
+                            <label for="concordo">Sim</label>
+                        </div>
+
+                        <div class="radio-contato-input">
+                            <input type="radio" id="discordo" name="contato">
+                            <label for="discordo">Não</label>
+                        </div>
+            
+                    </div>
+                </div>
+
+                <div class="enviar-button">
+                    <button><a href="#">Enviar</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
